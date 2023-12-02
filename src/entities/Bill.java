@@ -38,8 +38,13 @@ public class Bill {
 		this.softDrink = softDrink;
 	}
 	
+	private double calcConsuption () {
+		double consuption = (this.beer * 5.00) + (this.softDrink * 3.00) + (this.barbecue * 7.00) ;	
+		return consuption;
+	}
 	
 	public double cover() {
+		
 		return 0.0;
 	}
 	

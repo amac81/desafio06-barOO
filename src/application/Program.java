@@ -25,20 +25,27 @@ public class Program {
 		
 		Bill b1 = new Bill();
 		
+		int itemQuantity = 0;
 		
-		b1.setBarbecue(1);
 		
 		char gender = askAndValidateGenderInput(sc);
 		
 		b1.setGender(gender);
 		
-		int nBeers = askAndValidateIntInput("Quantidade de cervejas: ", sc);
-		b1.setBeer(nBeers);
+		itemQuantity = askAndValidateIntInput("Quantidade de cervejas: ", sc);
+		b1.setBeer(itemQuantity);
 		
-		b1.setSoftDrink(2);
+		itemQuantity = askAndValidateIntInput("Quantidade de refrigerantes: ", sc);
+		b1.setSoftDrink(itemQuantity);
+		
+		itemQuantity = askAndValidateIntInput("Quantidade de espetinhos: ", sc);
+		b1.setBarbecue(itemQuantity);
+		
 				
-		System.out.println(b1);
 		
+		
+		
+		System.out.println(b1);
 		
 		
 		sc.close();
@@ -84,8 +91,8 @@ public class Program {
 			if (scanner.hasNextInt()) 
 			{
 				value = scanner.nextInt();
-				if(value < 1) {
-					System.out.println("Introduza um número >= 1.");
+				if(value < 0) {
+					System.out.println("Introduza um número >= 0.");
 					askAgain = true;
 				}
 				else {
