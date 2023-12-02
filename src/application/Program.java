@@ -25,14 +25,15 @@ public class Program {
 		
 		Bill b1 = new Bill();
 		
-		b1.setBeer(3);
+		
 		b1.setBarbecue(1);
 		
-		char gender = askGenderInput(sc);
+		char gender = askAndValidateGenderInput(sc);
 		
 		b1.setGender(gender);
 		
-		
+		int nBeers = askAndValidateIntInput("Quantidade de cervejas: ", sc);
+		b1.setBeer(nBeers);
 		
 		b1.setSoftDrink(2);
 				
@@ -45,12 +46,12 @@ public class Program {
 	}
 	
 	/**
-	 * processa o input e validação do input de um caracter representando o género (F ou M)
+	 * pede ao utilizador um caracter, valida-o e retorna-o
 	 * 
 	 * @param scanner - objeto Scanner para entrada de dados, a partir de System.in 
 	 * @return caracter 'F' ou o caracter 'M'
 	 */
-	public static char askGenderInput(Scanner scanner) {
+	public static char askAndValidateGenderInput(Scanner scanner) {
 		char gender = 0;
 		
 		System.out.print("Sexo: ");
@@ -64,6 +65,42 @@ public class Program {
 		} while(gender != 'F' && gender != 'M');
 		
 		return gender;
+	}
+	
+	/**
+	 * pede ao utilizador um número, valida-o e retorna-o
+	 * 
+	 * @param askMessage - String com o texto a apresentar ao utilizador
+	 * @param scanner - objeto Scanner para entrada de dados, a partir de System.in 
+	 * @return número inteiro
+	 */
+	public static int askAndValidateIntInput(String askMessage, Scanner scanner) {
+		int value = 0;
+		boolean askAgain = true;
+		
+		System.out.print(askMessage);
+		while(askAgain) 
+		{
+			if (scanner.hasNextInt()) 
+			{
+				value = scanner.nextInt();
+				if(value < 1) {
+					System.out.println("Introduza um número >= 1.");
+					askAgain = true;
+				}
+				else {
+					askAgain = false;
+					break;
+				}
+			} 
+			else {
+				System.out.println("Número inválido! Introduza novamente.");
+				scanner.next();
+				askAgain = true;
+			}
+		}
+		
+		return value;
 	}
 
 }
