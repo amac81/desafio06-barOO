@@ -39,7 +39,7 @@ public class Bill {
 	}
 
 	public double cover() {
-		return 0.0;
+		return (feeding() >= 30) ? 0.0 : 4.00;
 	}
 	
 	public double feeding() {
