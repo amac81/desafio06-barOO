@@ -1,12 +1,17 @@
 /**
-* Programa que ...
+* Programa que pede o input dos seguintes dados:
 * 
+* >Genero de um utilizador (cliente do bar);
+* >Quantidade de cervejas; 
+* >Quantidade de refrigerantes;
+* >Quantidade de espetinhos;
+* 
+* No final apresenta um relatório ao utilizador relativo ao seu consumo no bar.  
 *
 * @author  Arnaldo Canelas
 * @version 1.0
 * @since   2023-12-02 
 */
-
 
 package application;
 
