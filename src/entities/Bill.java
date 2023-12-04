@@ -51,7 +51,7 @@ public class Bill {
 	}
 	
 	public double total() {
-		return 0.0;
+		return ticket() + cover() + feeding();
 	}
 	
 	
