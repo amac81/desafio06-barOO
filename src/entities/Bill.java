@@ -37,33 +37,21 @@ public class Bill {
 	public void setSoftDrink(int softDrink) {
 		this.softDrink = softDrink;
 	}
-	
-	private double calcConsuption () {
-		double consuption = (this.beer * 5.00) + (this.softDrink * 3.00) + (this.barbecue * 7.00) ;	
-		return consuption;
-	}
-	
+
 	public double cover() {
-		
 		return 0.0;
 	}
 	
 	public double feeding() {
-		return 0.0;
+		return 0.0;	
 	}
 	
 	public double ticket() {
-		return 0.0;
+		return (this.gender == 'F') ? 8.00 : 10.00;		
 	}
 	
 	public double total() {
 		return 0.0;
-	}
-
-	@Override
-	public String toString() {
-		return "Bill [gender=" + gender + ", beer=" + beer + ", barbecue=" + barbecue + ", softDrink=" + softDrink
-				+ "]";
 	}
 	
 	
