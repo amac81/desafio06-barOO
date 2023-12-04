@@ -53,7 +53,22 @@ public class Bill {
 	public double total() {
 		return ticket() + cover() + feeding();
 	}
-	
+
+	public void report() {
+		System.out.println("\nRELATÓRIO:");
+		System.out.printf("Consumo = R$ %.2f\n", feeding());
+		double couvert = cover();
+		
+		if(couvert!=0) {
+			System.out.printf("Couvert = R$ %.2f\n", couvert);
+		}
+		else {
+			System.out.println("Isento de Couvert");
+		}
+		
+		System.out.printf("Ingresso = R$ %.2f\n", ticket());
+		System.out.printf("\nValor a pagar = R$ %.2f\n", total());
+	}
 	
 
 }

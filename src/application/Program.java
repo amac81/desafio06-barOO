@@ -41,15 +41,10 @@ public class Program {
 		itemQuantity = askAndValidateIntInput("Quantidade de espetinhos: ", sc);
 		b1.setBarbecue(itemQuantity);
 		
-				
-		
-		
-		
-		System.out.println(b1);
-		
+		// gerar Relatório
+		b1.report();	
 		
 		sc.close();
-
 	}
 	
 	/**
