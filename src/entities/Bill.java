@@ -43,7 +43,7 @@ public class Bill {
 	}
 	
 	public double feeding() {
-		return 0.0;	
+		return (this.beer * 5.00) + (this.softDrink * 3.00) + (this.barbecue * 7.00) ;	
 	}
 	
 	public double ticket() {
